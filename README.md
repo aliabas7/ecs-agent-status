@@ -1,7 +1,7 @@
 # ECS-Agent-Status
 A simple docker image that can run on Amazon EC2 instance and report ECS agent status to CloudWatch
 
-Description: ECS agent on EC2 launch type can get disconnected and there is no out of the box monitoring. This can be frustrating, especially if you're using a custom AMI. This simple docker image that runs on your container instance and reports 0 if the agent is connected and reports 1 if it's disconnected. You can then create a conservative alarm to get notified if the agent is disconnected.  
+**Description:** ECS agent on EC2 launch type can get disconnected and there is no out of the box monitoring. This can be frustrating, especially if you're using a custom AMI. This simple docker image that runs on your container instance and reports 0 if the agent is connected and reports 1 if it's disconnected. You can then create a conservative alarm to get notified if the agent is disconnected.  
 
 **Installation and Usage:**
 

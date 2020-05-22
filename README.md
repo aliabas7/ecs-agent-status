@@ -3,6 +3,10 @@ A docker container that can run on AWS ECS container instances and report ECS ag
 
 **Description:** ECS agent on EC2 launch type can get disconnected and there is no out of the box monitoring for it. This can be frustrating, especially if you're using a custom AMI. ECS-Agent-Status runs on your container instance and reports 0 if the agent is connected and reports 1 if it's disconnected. You can then create an alarm to get notified if the agent is disconnected.  
 
+**Requirements:**
+
+The ECS instance role (if ran via docker run command) or the task role (if ran via ECS) need to have cloudwatch:PutMetricData permissions. 
+
 **Installation and Usage:**
 
 You should run it ideally in the user data of the image with this command::

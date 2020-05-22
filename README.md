@@ -11,9 +11,8 @@ You should run it ideally in the user data of the image with this command::
 
 *Options:*
 
-Use a "--restart always" policy if you're really paranoid about the agent
-
-Run with --init if you'd like the container to exit gracefully, as the parent process doesn't reap the child process (currently a WIP)
+- Use a "--restart always" policy if you're really paranoid about the agent
+- Run with --init if you'd like the container to exit gracefully, as the parent process doesn't reap the child process (currently a WIP)
 
 **Creating an Alarm:** Consider creating a conservative alarm as chances of false positive are high because as per AWS public documentation: "The Amazon ECS container agent disconnects and reconnects several times per hour as a part of its normal operation, so agent connection events should be expected. These events are not an indication that there is an issue with the container agent or your container instance." 
 

@@ -1,15 +1,15 @@
 # ECS-Agent-Status
-A simple docker image that can run on Amazon EC2 instance and report ECS agent status to CloudWatch
+A docker container that can run on AWS ECS container instances and report ECS agent status to CloudWatch
 
-**Description:** ECS agent on EC2 launch type can get disconnected and there is no out of the box monitoring. This can be frustrating, especially if you're using a custom AMI. This simple docker image that runs on your container instance and reports 0 if the agent is connected and reports 1 if it's disconnected. You can then create a conservative alarm to get notified if the agent is disconnected.  
+**Description:** ECS agent on EC2 launch type can get disconnected and there is no out of the box monitoring for it. This can be frustrating, especially if you're using a custom AMI. ECS-Agent-Status runs on your container instance and reports 0 if the agent is connected and reports 1 if it's disconnected. You can then create an alarm to get notified if the agent is disconnected.  
 
 **Installation and Usage:**
 
-You should run it ideally in the user data of the image with this command (with a --restart always policy if you're really paranoid about your agent):
+You should run it ideally in the user data of the image with this command (with a "--restart always" policy if you're really paranoid about the agent):
 
-                      docker run -d aliabas/ecsstatus:latest
+                                                docker run -d aliabas/ecsstatus:latest
 
-**Creating an Alarm:** It's recommended to create a conservative alarm as chances of false positive are high because "The Amazon ECS container agent disconnects and reconnects several times per hour as a part of its normal operation, so agent connection events should be expected. These events are not an indication that there is an issue with the container agent or your container instance." 
+**Creating an Alarm:** Consider creating a conservative alarm as chances of false positive are high because as per AWS public documentation: "The Amazon ECS container agent disconnects and reconnects several times per hour as a part of its normal operation, so agent connection events should be expected. These events are not an indication that there is an issue with the container agent or your container instance." 
 
 **License**
 GPLv3+

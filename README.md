@@ -10,6 +10,7 @@ You should run it ideally in the user data of the image with this command::
                                         docker run -d aliabas/ecsstatus:latest
 
 *Options:*
+
 Use a "--restart always" policy if you're really paranoid about the agent
 Run with --init if you'd like the container to exit gracefully, as the parent process doesn't reap the child process (currently a WIP)
 

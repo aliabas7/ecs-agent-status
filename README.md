@@ -7,7 +7,7 @@ A docker container that can run on AWS ECS container instances and report ECS ag
 
 You should run it ideally in the user data of the image with this command::
 
-                                        docker run -d aliabas/ecsstatus:latest
+                                        docker run -d aliabas/ecs-agent-status
 
 *Options:*
 

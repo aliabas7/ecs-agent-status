@@ -7,7 +7,7 @@ A simple docker image that can run on Amazon EC2 instance and report ECS agent s
 
 You should run it ideally in the user data of the image with this command (with a --restart always policy if you're really paranoid about your agent):
 
-                      docker run -d -t aliabas/ecsstatus:latest
+                      docker run -d aliabas/ecsstatus:latest
 
 **Creating an Alarm:** It's recommended to create a conservative alarm as chances of false positive are high because "The Amazon ECS container agent disconnects and reconnects several times per hour as a part of its normal operation, so agent connection events should be expected. These events are not an indication that there is an issue with the container agent or your container instance." 
 
